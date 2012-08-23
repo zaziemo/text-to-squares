@@ -1,0 +1,52 @@
+Marens Ruby Dictionary
+
+#argument = compoments of the method z.B. initialize(recipient, subject, body, sender)
+
+#array [ ] = Liste (ordered collection of stuff)
+http://www.ruby-doc.org/core-1.9.3/Array.html (Liste von Methoden)
+array.first (erstes Element in der Liste)
+array.last (letztes)
+array[0] [Position des Elementes - fängt bei Null an zu zählen]
+
+#constants = capitalized, can’t be changed after they are set
+
+#group = curly braces / hash { } , zeigt eine Gruppe an, aber keine sortierte Liste
+
+#block = surrounded by curly braces { }, groups a set of instructions together, those groups can be passed around in your program, same function have the words do … end if the block is longer than one line
+
+#block argument = set of variables surrounded by pipes || and separated by commas, are used at the beginning of a block, variables are passed into the block
+
+#class = abstract idea, Klasse / Bauplan, nach dem alle Objekte gefertigt werden  - Anlegen von Charakteristika (Farbe, Größe, Bestandteile...)
+
+#integer = Zahl - nicht erlaubt sind Kommas, aber Unterstriche
+
+#floats = Zahl mit Kommas und anderen mathematischen Zeichen, z.b . 12.043e-04
+
+#if else command = Wenn-Dann-Verknüpfung
+! = not, z.B. != bedeutet ist ungleich
+||= conditional assignment (if this one doesn’t already have a value, assign this one), z.B. @options[:sender] ||= 'unknown sender'
+
+#instance method vs. class method = attached after variables and constants to create things, double colon (::), e.g. Door::new( :oak)
+
+#method = verb/action, are attached at the end of the variables with a dot, e.g. front_door.open
+#method arguments = more information to perform the action, attached to the end of a method, usually surrounded by parentheses and separated by commas, e.g. front_door.paint(3, :red)
+#class (level) method = method, that can be applied to all classes, e.g. attr_accessor, wird immer durch .self dargestellt und initiiert, kann immer auf die Klasse angewendet werden,
+ohne dass man ein konkretes Objekt erzeugen muss (Anwendung: wenn man statisches Wissen über die Klasse anwenden möchte)
+
+#nil = nothing (als Fehlermeldung)
+
+#object = Eine Sorte (instance) der Klasse
+
+#parameter = anja.send_email('carla@gmail.com', 'Railsgirls infos!', 'Lots of text here...')
+
+#puts = prints someting out
+#string = any sort of characters (letters, digits, punctuation) surrounded by quotation marks “” or ‘’
+#symbol = lightweight strings, can contain any sort of characters (letters, digits, punctuation), start with a colon (:) ? Usually, symbols are used in situations where you need a string but you won’t be printing it to the screen. (??)
+
+#variable = nickname to something you use frequently
+Name der Variable = xxx 
+Groß- und Kleinschreibung sind wichtig!
+instance variables = begin with an @ sign, often used to define the attributes or characteristics of a single object ("throw away variable")
+global variables = begin with a $ sign, Global variables can be used anywhere in your program
+class variables = begin with double @, used to define attributes to many related objects in ruby (attribute all)
+@Name of a variable 
