@@ -1,52 +1,138 @@
 Marens Ruby Dictionary
 
-#argument = compoments of the method z.B. initialize(recipient, subject, body, sender)
+#ATTR_ACCESSOR (attr_reader / attr_writer)
+to define an instance variable and create read/write methods to access it. It also saves writing time. 
 
-#array [ ] = Liste (ordered collection of stuff)
-http://www.ruby-doc.org/core-1.9.3/Array.html (Liste von Methoden)
+attr_accessor :name
+is the same as: 
+
+  def name  
+     @name
+  end
+
+  def name=(name) 
+    @name = name
+  end
+
+#ARGUMENT (in parenthesis) = compoments of the method z.B. initialize(recipient, subject, body, sender), 
+value passed to a method parameter when you call the method. 
+
+#ARRAY [ ] = Liste (ordered collection of stuff), You can order, sort,  collect, pull, add, remove date and do all kinds of things using array methods.
+http://ruby-doc.org/core-1.9.3/Enumerable.html#method-i-group_by 
+http://www.ruby-doc.org/core-1.9.3/Array.html (Listen von Methoden)
+
+Examples array methods:
+- with ! it stays, you can do shuffle!.pop
+- with ? return true or false
+.select or
+.find all	(returns array containing all elements for which block is not false)
+.detect or 
+.find		(returns the first on, for which block not false)
+.collect or
+.map        (returns new array with results of running block for every element)
+.reject		(returns the element for which the block is not true)
+.first 		(returns the first element)
+.last
+.each	 	(invokes the code block for each element)
+.pop 		(remove the last element and returns it)
+.shift 		(remove the first element and returns it)
+.push or << (appends the object to the array)
+.shuffle	(mixing)
+.include?   (true, if given object is present)	
+.all?		(true, if block never returns false or nil)
+.any?		(true, if block ever returns a value other than false or nil)
+.none?		(true, if block never returns true)
+
 array.first (erstes Element in der Liste)
 array.last (letztes)
 array[0] [Position des Elementes - fängt bei Null an zu zählen]
 
-#constants = capitalized, can’t be changed after they are set
+#BLOCK = surrounded by curly braces { }, groups a set of instructions together, those groups can be passed around in your program,
+same function have the words do … end if the block is longer than one line
 
-#group = curly braces / hash { } , zeigt eine Gruppe an, aber keine sortierte Liste
+#BLOCK ARGUMENT = set of variables surrounded by pipes || and separated by commas, are used at the beginning of a block, variables are passed into the block
 
-#block = surrounded by curly braces { }, groups a set of instructions together, those groups can be passed around in your program, same function have the words do … end if the block is longer than one line
+#BOOLEAN  (true/false) expressions
+&& means "and"
+|| means "or"
+! means "not"
 
-#block argument = set of variables surrounded by pipes || and separated by commas, are used at the beginning of a block, variables are passed into the block
+#CLASS = abstract idea, Klasse / Bauplan, nach dem alle Objekte gefertigt werden
+ - Anlegen von Charakteristika (Farbe, Größe, Bestandteile...). A class needs variables and methods to produce. Variables represent the inner state and the methods are 
+the behavior. 
 
-#class = abstract idea, Klasse / Bauplan, nach dem alle Objekte gefertigt werden  - Anlegen von Charakteristika (Farbe, Größe, Bestandteile...)
+#CONSTANTS = capitalized, can’t be changed after they are set
 
-#integer = Zahl - nicht erlaubt sind Kommas, aber Unterstriche
+#CONTROL FLOW = if ...elsif... else... end; unless ... end; while ... end
 
-#floats = Zahl mit Kommas und anderen mathematischen Zeichen, z.b . 12.043e-04
+#GROUP = curly braces / hash { } , zeigt eine Gruppe an, aber keine sortierte Liste
 
-#if else command = Wenn-Dann-Verknüpfung
+#INTEGER = ganze Zahl - nicht erlaubt sind Kommas, aber Unterstriche, zur besseren Lesbarkeit
+
+#FLOAT = Zahl mit Kommas und anderen mathematischen Zeichen, z.b . 12.043e-04
+
+#HASH
+A dictionary that holds items (key) and it´s "explanations" (value). For example a restaurant menu that holds 
+the menu names and it´s prices:
+
+restaurant_menu = { "Burger" => 3, "Pizza" => 10, "Coffee" => 2}
+
+#IF ELSE COMMAND = Wenn-Dann-Verknüpfung
 ! = not, z.B. != bedeutet ist ungleich
 ||= conditional assignment (if this one doesn’t already have a value, assign this one), z.B. @options[:sender] ||= 'unknown sender'
 
-#instance method vs. class method = attached after variables and constants to create things, double colon (::), e.g. Door::new( :oak)
+#INITIALIZE METHOD
+initialize sets the state of the class and is the first called method ( if available) if a Object.new is created. 
+It takes the arguments from the new method which will then be stored in instance variables, which then again 
+can be used by methods within the class. 
 
-#method = verb/action, are attached at the end of the variables with a dot, e.g. front_door.open
-#method arguments = more information to perform the action, attached to the end of a method, usually surrounded by parentheses and separated by commas, e.g. front_door.paint(3, :red)
-#class (level) method = method, that can be applied to all classes, e.g. attr_accessor, wird immer durch .self dargestellt und initiiert, kann immer auf die Klasse angewendet werden,
+class Song 
+   def initialize(a, b, c) 
+      @a = a 
+      @b = b 
+      @c = c 
+    end 
+end
+
+object1 = Object.new("a", "b", c)
+
+#INSTANCE METHOD vs. CLASS METHOD = attached after variables and constants to create things, double colon (::), e.g. Door::new( :oak)
+
+#LOOPING/ ITERATOREN, to execute a block of code a certain number of times ( also under certain conditions (true/false)).
+
+While
+3.times do
+.each
+if /else
+Unless (if-not)
+^^alternative to if/else
+
+#METHOD = verb/action, are attached at the end of the variables with a dot, e.g. front_door.open, When called it will return the last line in the body part. 
+#METHOD ARGUMENTS = more information to perform the action, attached to the end of a method, usually surrounded by parentheses and separated by commas, e.g. front_door.paint(3, :red)
+#CLASS (LEVEL) METHOD = method, that can be applied to all classes, e.g. attr_accessor, wird immer durch .self dargestellt und initiiert, kann immer auf die Klasse angewendet werden,
 ohne dass man ein konkretes Objekt erzeugen muss (Anwendung: wenn man statisches Wissen über die Klasse anwenden möchte)
 
-#nil = nothing (als Fehlermeldung)
+#NIL = nothing (als Fehlermeldung)
 
-#object = Eine Sorte (instance) der Klasse
+#OBJECT = Eine Sorte (instance) der Klasse
 
-#parameter = anja.send_email('carla@gmail.com', 'Railsgirls infos!', 'Lots of text here...')
+#PARAMETER (in paranthesis) = recieved by methods, value that the method expects you to pass when you call it., anja.send_email('carla@gmail.com', 'Railsgirls infos!', 'Lots of text here...')
 
-#puts = prints someting out
-#string = any sort of characters (letters, digits, punctuation) surrounded by quotation marks “” or ‘’
-#symbol = lightweight strings, can contain any sort of characters (letters, digits, punctuation), start with a colon (:) ? Usually, symbols are used in situations where you need a string but you won’t be printing it to the screen. (??)
+#PUTS = prints someting out
+#STRING = any sort of characters (letters, digits, punctuation) surrounded by quotation marks “” or ‘’
+#SYMBOL = lightweight strings, can contain any sort of characters (letters, digits, punctuation), start with a colon (:) ? Usually, symbols are used in situations where you need a string but you won’t be printing it to the screen. (??)
 
-#variable = nickname to something you use frequently
+#VARIABLE = nickname to something you use frequently
 Name der Variable = xxx 
 Groß- und Kleinschreibung sind wichtig!
-instance variables = begin with an @ sign, often used to define the attributes or characteristics of a single object ("throw away variable")
-global variables = begin with a $ sign, Global variables can be used anywhere in your program
+INSTANCE VARIABLES = begin with an @ sign, often used to define the attributes or characteristics of a single object ("throw away variable")
+usually  we set and initialize all the instance variables in the initialize method of the class. 
+Instance variables represent the state of the objects (age, gender, name). Characteristics that should 
+be remembered for each created object as long as the object exist (for a momentary storage we use local 
+variables instead). 
+You can store info in an instance variable and have it used  by other methods within the class. 
+You cannot access the instance variable from outside the class unless you declare accessor methods (?).
+
+GLOBAL VARIABLES = begin with a $ sign, Global variables can be used anywhere in your program
 class variables = begin with double @, used to define attributes to many related objects in ruby (attribute all)
 @Name of a variable 
