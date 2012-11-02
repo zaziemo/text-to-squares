@@ -3,12 +3,9 @@
 <%= notice %>
   </p>
 <% end %>
-<h4 style="color:#456789">This is <%= @text.user.name%>'s square.</h4>
+<h4 style="color:#456789">This is <%= @text.user.name if @text.user %>'s square.</h4>
 <br>
-<p>
-  <b>YOUR TEXT:</b>
-  <%= @text.input %>
-</p>
+
   <ol style="width:<%= @text.rows.first.length * 50 +26%>px; margin: 0 auto;">
     <% @text.rows.each do |row| %>
       <li>
@@ -24,6 +21,17 @@
 <br>
 <br>
 <br>
+<br>
+  
+<p>
+  <b>YOUR TEXT:</b>
+  <%= @text.input %>
+</p>
+  
+<br>
+<br>
+<br>
+
 <%= link_to 'Edit', edit_text_path(@text) %> |
 <%= link_to 'Listing Texts', texts_path %> |
 <%= link_to 'New Text', new_text_path %>
