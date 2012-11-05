@@ -26,6 +26,14 @@
 <p>
   <b>YOUR TEXT:</b>
   <%= @text.input %>
+<br>
+<form action="select.htm">
+  <p>Please choose if the text should be published or not:</p>
+    <select name="Show/Hide" size="2">
+      <option>Show Text</option>
+      <option>Hide Text</option>
+    </select>
+
 </p>
   
 <br>
@@ -34,4 +42,5 @@
 
 <%= link_to 'Edit', edit_text_path(@text) %> |
 <%= link_to 'Listing Texts', texts_path %> |
-<%= link_to 'New Text', new_text_path %>
+<%= link_to 'New Text', new_text_path %> |
+

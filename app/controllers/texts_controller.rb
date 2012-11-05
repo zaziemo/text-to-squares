@@ -68,7 +68,7 @@ class TextsController < ApplicationController
       end
     end
   end
-
+  
   # DELETE /texts/1
   # DELETE /texts/1.json
   def destroy
