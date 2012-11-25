@@ -34,6 +34,13 @@ class TextsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "user should only be authorized to edit if user is author" do
+    get :edit, id: @text
+    if @current_user.id == user.find(:id)  
+    end 
+    assert_response :success
+  end
+
   test "should update text" do
     put :update, id: @text, text: { input: @text.input }
     assert_redirected_to text_path(assigns(:text))

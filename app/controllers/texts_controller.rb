@@ -35,6 +35,9 @@ class TextsController < ApplicationController
   # GET /texts/1/edit
   def edit
     @text = Text.find(params[:id])
+    if @current_user.id == user.find(:id)
+    else puts "Not authorized"
+    end
   end
 
   # POST /texts
