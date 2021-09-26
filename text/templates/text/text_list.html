@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Text to Squares</title>
+  </head>
+  <body>
+    <h1>Text to Squares</h1>
+    {% for content in contents %}
+      <div>
+        <time>{{ content.created_date }}</time>
+        <p>{{ content.text }}</p>
+      </div>
+    {% endfor %}
+  </body>
+</html>
